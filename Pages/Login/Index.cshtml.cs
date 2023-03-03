@@ -36,8 +36,11 @@ namespace Ass2_PRN221.Pages.Login
             if (acc.Password.ToLower().Equals(password))
             {
                 HttpContext.Session.SetString("account", JsonConvert.SerializeObject(acc));
-                return Redirect("/App/Order");
-            } else return RedirectToPage("./../Error"); 
+                return Redirect("/App/");
+            } else return RedirectToPage("./../Error");
+            
+
+
         }
     }
 }
