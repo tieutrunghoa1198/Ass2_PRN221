@@ -45,23 +45,23 @@ app.Map("/Admin", (app1) =>
     app1.Use(async (context, next) =>
     {
         // Do work that can write to the Response.
-        var acc = context.Session.GetString("account") ?? "";
-        Console.WriteLine(acc);
-        if (String.IsNullOrEmpty(acc.ToLower()))
-        {
-            Console.WriteLine("Cannot find acc");
+            var acc = context.Session.GetString("account") ?? "";
+            Console.WriteLine(acc);
+            if (String.IsNullOrEmpty(acc.ToLower()))
+            {
+                Console.WriteLine("Cannot find acc");
         }
         else
-        {
+            {
             await next.Invoke();
-        }
+            }
 
 
         // Do logging or other work that doesn't write to the Response.
     });
     // Execute the endpoint selected by the routing middleware
     app1.UseEndpoints(endpoints =>
-    {
+        {
         endpoints.MapDefaultControllerRoute();
     });
 });
