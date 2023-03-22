@@ -18,7 +18,6 @@ namespace Ass2_PRN221.Pages.Login
 
         public IActionResult OnGet()
         {
-            
             return Page();
         }
 
@@ -31,13 +30,21 @@ namespace Ass2_PRN221.Pages.Login
                   return Page();
               }*/
 
-            var acc = _context.Account.SingleOrDefault(e => e.UserName == username);
-            
-            if (acc.Password.ToLower().Equals(password))
+           try
             {
-                HttpContext.Session.SetString("account", JsonConvert.SerializeObject(acc));
-                return Redirect("/App/");
-            } else return RedirectToPage("./../Error");
+                var acc = _context.Account.SingleOrDefault(e => e.UserName == username);
+
+                if (acc.Password.ToLower().Equals(password))
+                {
+                    HttpContext.Session.SetString("account", JsonConvert.SerializeObject(acc));
+                    return Redirect("/");
+                }
+                else return RedirectToPage("./../Error");
+            } catch (Exception ex)
+            {
+                
+                return RedirectToPage("./../Error");
+            }
             
 
 

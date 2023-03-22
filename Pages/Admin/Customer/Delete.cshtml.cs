@@ -57,7 +57,7 @@ namespace Ass2_PRN221.Pages.Customer
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Customer/");
         }
     }
 }

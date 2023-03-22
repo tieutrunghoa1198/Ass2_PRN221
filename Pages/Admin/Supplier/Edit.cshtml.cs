@@ -43,10 +43,7 @@ namespace Ass2_PRN221.Pages.Supplier
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             _context.Attach(Supplier).State = EntityState.Modified;
 
@@ -66,7 +63,7 @@ namespace Ass2_PRN221.Pages.Supplier
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Supplier/");
         }
 
         private bool SupplierExists(int id)

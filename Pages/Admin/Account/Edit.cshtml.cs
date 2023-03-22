@@ -43,10 +43,7 @@ namespace Ass2_PRN221.Pages.Account
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             _context.Attach(Account).State = EntityState.Modified;
 
@@ -66,7 +63,7 @@ namespace Ass2_PRN221.Pages.Account
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Account/");
         }
 
         private bool AccountExists(int id)

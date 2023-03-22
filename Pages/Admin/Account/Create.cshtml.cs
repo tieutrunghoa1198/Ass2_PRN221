@@ -31,15 +31,12 @@ namespace Ass2_PRN221.Pages.Account
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+          
 
             _context.Account.Add(Account);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Account/");
         }
     }
 }

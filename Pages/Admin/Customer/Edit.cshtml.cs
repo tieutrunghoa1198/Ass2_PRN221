@@ -43,10 +43,7 @@ namespace Ass2_PRN221.Pages.Customer
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             _context.Attach(Customer).State = EntityState.Modified;
 
@@ -66,7 +63,7 @@ namespace Ass2_PRN221.Pages.Customer
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Customer/");
         }
 
         private bool CustomerExists(int id)

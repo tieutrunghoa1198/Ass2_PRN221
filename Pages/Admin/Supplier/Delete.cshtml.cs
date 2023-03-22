@@ -57,7 +57,7 @@ namespace Ass2_PRN221.Pages.Supplier
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Supplier/");
         }
     }
 }

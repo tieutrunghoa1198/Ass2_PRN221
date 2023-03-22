@@ -1,0 +1,23 @@
+﻿@page
+@model Ass2_PRN221.Pages.Product.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1 style="margin-bottom: "50px;">Pizza</h1>
+<div class="row">
+    @foreach (var item in Model.Product)
+    { 
+        <div class="card col-3 mx-3 my-3" style="height: fit-content;">
+            <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.ProductImage)" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">@Html.DisplayFor(modelItem => item.ProductName)</h5>
+                <h6 class="card-subtitle mb-2 text-muted">@Html.DisplayFor(modelItem => item.Suppliers.CompanyName)</h6>
+                <p class="card-text">@Html.DisplayFor(modelItem => item.Categories.CategoryName)</p>
+                <a class="btn btn-primary" asp-page="./Details" asp-route-id="@item.ProductID">Details</a>
+            </div>
+        </div>
+    }
+</div>

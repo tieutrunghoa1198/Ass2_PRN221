@@ -43,10 +43,7 @@ namespace Ass2_PRN221.Pages.Category
         // For more details, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             _context.Attach(Category).State = EntityState.Modified;
 
@@ -66,7 +63,7 @@ namespace Ass2_PRN221.Pages.Category
                 }
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Category/");
         }
 
         private bool CategoryExists(int id)

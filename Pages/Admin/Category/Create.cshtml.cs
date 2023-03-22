@@ -31,15 +31,15 @@ namespace Ass2_PRN221.Pages.Category
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
-          if (!ModelState.IsValid)
+          /*if (!ModelState.IsValid)
             {
                 return Page();
-            }
+            }*/
 
             _context.Category.Add(Category);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Category/");
         }
     }
 }

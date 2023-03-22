@@ -57,7 +57,7 @@ namespace Ass2_PRN221.Pages.Account
                 await _context.SaveChangesAsync();
             }
 
-            return RedirectToPage("./Index");
+            return Redirect("~/Account/");
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿@using Microsoft.AspNetCore.Http;
-@using Newtonsoft.Json;
+﻿@using Newtonsoft.Json;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,59 +27,61 @@
                             if (String.IsNullOrEmpty(sessionvalue))
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Login/Index">Login</a>
+                                    <a class="nav-link text-dark" href="/Login/Index">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="/Login/Register">Register</a>
+                                </li>
+                            }
+                            else if (asc.Type == 0)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="/Member/Product/Index">Product</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" href="/Login/Logout">Logout</a>
                                 </li>
                             }
                             else if (asc.Type == 1)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/Order/Index">Order</a>
-
+                                    <a class="nav-link text-dark" href="/Staff/Order/Index">Order</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/OrderDetail/Index">OrderDetail</a>
+                                    <a class="nav-link text-dark" href="/Staff/OrderDetail/Index">OrderDetail</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/Product/Index">Product</a>
+                                    <a class="nav-link text-dark" href="/Staff/Product/">Product</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Login/Logout">Logout</a>
+                                    <a class="nav-link text-dark" href="/Login/Logout">Logout</a>
                                 </li>
                             }
                             else if (asc.Type == 2)
                             {
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="Admin/Account" asp-page="Index">Home</a>
+                                    <a class="nav-link text-dark" href="/Admin/Account/Index">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="Admin/Account" asp-page="/Index">Account</a>
+                                    <a class="nav-link text-dark" href="/Admin/Category/Index">Category</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="Admin/Category" asp-page="/Index">Category</a>
-
+                                    <a class="nav-link text-dark" href="/Admin/Customer/Index">Customer</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="Admin" asp-page="/Customer/Index">Customer</a>
-
+                                    <a class="nav-link text-dark" href="/Staff/Order/Index">Order</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/Order/Index">Order</a>
-
+                                    <a class="nav-link text-dark" href="/Staff/OrderDetail/Index">OrderDetail</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/OrderDetail/Index">OrderDetail</a>
+                                    <a class="nav-link text-dark" href="/Staff/Product/">Product</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/App/Product/Index">Product</a>
+                                    <a class="nav-link text-dark" href="/Admin/Supplier/Index">Supplier</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Admin/Supplier/Index">Supplier</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link text-dark" asp-area="" asp-page="/Login/Logout">Logout</a>
+                                    <a class="nav-link text-dark" href="/Login/Logout">Logout</a>
                                 </li>
                             }
                         }

@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Ass2_PRN221.Data;
-using Ass2_PRN221.Models;
-using Newtonsoft.Json;
-using Microsoft.AspNetCore.Http;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -66,7 +62,7 @@ app.Map("/Admin", (app1) =>
     });
 });
 
-app.Map("/App", (app1) =>
+app.Map("/Staff", (app1) =>
 {
     app1.UseStaticFiles();
     app1.Use(async (context, next) =>
